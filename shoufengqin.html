@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	手风琴菜单</title>
+	<!-- 制作一个手风琴菜单，初始样式将高度设为0，用overflow属性隐藏元素，用伪类和过渡高度将隐藏的元素像手风琴一样展现出来 -->
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.nav{
+			width: 200px;
+			margin: 20px auto;
+		}
+		.nav ul{
+			list-style: none;
+			/*padding:2px 0px;*/
+		}
+		.nav ul li{
+			width:198px;
+			height: 30px;
+			border:1px solid green;
+			margin: 1px 0;
+			
+		}
+		.nav ul li a{
+			text-decoration: none;
+			/*-webkit-transform: translate(-90px,-5px);*/
+			margin: 4px 80px;
+			color:green;
+		}
+		.nav-xiangqing{
+			width: 200px;
+			height:0px;
+			/*border:solid 1px green;*/
+			background:green;
+			overflow: hidden;
+		}
+		/*+:兄弟元素;空格或>父子元素*/
+		.nav ul li:hover +.nav-xiangqing{
+			height:150px;
+			transition: height 2s ;
+		}
+	</style>	
+</head>
+
+<body>
+	<div class="nav">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<!-- 这里可不可以不用div，用li行不行 -->
+			<div class="nav-xiangqing">zheshishouyedexiangqing</div>
+			<li><a href="#">阳光</a></li>
+			<div class="nav-xiangqing">zheshishouyedexiangqing</div>
+			<li><a href="#">数目</a></li>
+			<div class="nav-xiangqing">zheshishouyedexiangqing</div>
+		</ul>
+    </div>
+</body>
+</html>
